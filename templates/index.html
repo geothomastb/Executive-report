@@ -63,7 +63,11 @@
                 <div class="executive_metric">
                   <h3>Spend</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['performance_metrics']['spend']['value']>0 %}
                     ${{final_data['phase1']['metrics']['performance_metrics']['spend']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -103,7 +107,11 @@
                 <div class="executive_metric">
                   <h3>IMP AVG</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['ipm']['value']|float)}}%
+                    {% if final_data['phase1']['metrics']['performance_metrics']['ipm']['value']>0 %}
+                    {{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['ipm']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -140,7 +148,11 @@
                 <div class="executive_metric">
                   <h3>CPI AVG</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['performance_metrics']['cpi']['value']>0 %}
                     ${{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['cpi']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -177,7 +189,11 @@
                 <div class="executive_metric">
                   <h3>CPM AVG</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['performance_metrics']['cpm']['value']>0 %}
                     ${{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['cpm']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -219,7 +235,11 @@
                 <div class="executive_metric">
                   <h3>CPA</h3>
                   <h4>
-                    {{final_data['phase1']['metrics']['performance_metrics']['cpa']['value']}}
+                    {% if final_data['phase1']['metrics']['performance_metrics']['cpa']['value']>0 %}
+                    ${{final_data['phase1']['metrics']['performance_metrics']['cpa']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -259,7 +279,11 @@
                 <div class="executive_metric">
                   <h3>CTR</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['ctr']['value']|float)}}
+                    {% if final_data['phase1']['metrics']['performance_metrics']['ctr']['value']>0 %}
+                    ${{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['ctr']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -299,7 +323,11 @@
                 <div class="executive_metric">
                   <h3>CTI</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['performance_metrics']['cti']['value']>0 %}
                     {{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['cti']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -339,7 +367,11 @@
                 <div class="executive_metric">
                   <h3>CPUP</h3>
                   <h4>
-                    {{final_data['phase1']['metrics']['performance_metrics']['cpup']['value']}}
+                    {% if final_data['phase1']['metrics']['performance_metrics']['cpup']['value']>0 %}
+                    ${{'%0.2f'|format(final_data['phase1']['metrics']['performance_metrics']['cpup']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -381,7 +413,11 @@
                 <div class="executive_metric">
                   <h3>Creatives Tested</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['creative_metrics']['tested_creatives']['value']>0 %}
                     {{final_data['phase1']['metrics']['creative_metrics']['tested_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -421,7 +457,11 @@
                 <div class="executive_metric">
                   <h3>Above Threshold</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['creative_metrics']['above_threshold_creatives']['value']>0 %}
                     {{final_data['phase1']['metrics']['creative_metrics']['above_threshold_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -461,7 +501,11 @@
                 <div class="executive_metric">
                   <h3>Below Threshold</h3>
                   <h4>
+                    {% if final_data['phase1']['metrics']['creative_metrics']['below_threshold_creatives']['value']>0 %}
                     {{final_data['phase1']['metrics']['creative_metrics']['below_threshold_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -553,7 +597,7 @@
         <img
           src="{{i}}"
           width="90%"
-          ;height="400px"
+          ;height="300px"
           style="padding-left: 100px"
         />
       </div>
@@ -715,7 +759,12 @@
                 <div class="executive_metric">
                   <h3>Spend</h3>
                   <h4>
+                    {% if final_data['phase2']['metrics']['performance_metrics']['spend']['value']>0 %}
                     ${{final_data['phase2']['metrics']['performance_metrics']['spend']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
+
                   </h4>
                   <p>
                     {% if
@@ -754,7 +803,11 @@
                 <div class="executive_metric">
                   <h3>IMP AVG</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['ipm']['value']|float)}}%
+                    {% if final_data['phase2']['metrics']['performance_metrics']['ipm']['value']>0 %}
+                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['ipm']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -792,7 +845,11 @@
                 <div class="executive_metric">
                   <h3>ROAS D1 AVG</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['d0_roas']['value']|float)}}
+                    {% if final_data['phase2']['metrics']['performance_metrics']['d0_roas']['value']>0 %}
+                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['d0_roas']['value']*100|float)}}%
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -831,7 +888,11 @@
                 <div class="executive_metric">
                   <h3>ROAS D7 AVG</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['d7_roas']['value']|float)}}
+                    {% if final_data['phase2']['metrics']['performance_metrics']['d7_roas']['value']>0 %}
+                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['d7_roas']['value'] *100|float)}}%
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -872,7 +933,11 @@
                 <div class="executive_metric">
                   <h3>CPA</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['cpa']['value']|float)}}
+                    {% if final_data['phase2']['metrics']['performance_metrics']['cpa']['value']>0 %}
+                    ${{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['cpa']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -911,7 +976,11 @@
                 <div class="executive_metric">
                   <h3>CTR</h3>
                   <h4>
+                    {% if final_data['phase2']['metrics']['performance_metrics']['ctr']['value']>0 %}
                     {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['ctr']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -941,7 +1010,7 @@
                       final_data['phase2']['metrics']['performance_metrics']['ctr']['inflation_percent']}}%</span
                     >
 
-                    {%endif%}vs Prev.{{final_data['phase2']['metrics']['compared_date_range']['days_count']}} Days
+                    {%endif%}vs Prev.{{final_data['phase2']['metrics']['compared_date_range']['days_count']}}Days
                   </p>
                 </div>
               </div>
@@ -950,7 +1019,11 @@
                 <div class="executive_metric">
                   <h3>CTI</h3>
                   <h4>
+                    {% if  final_data['phase2']['metrics']['performance_metrics']['cti']['value']>0 %}
                     {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['cti']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -989,7 +1062,11 @@
                 <div class="executive_metric">
                   <h3>CPUP</h3>
                   <h4>
-                    {{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['cpup']['value']|float)}}
+                    {% if final_data['phase2']['metrics']['performance_metrics']['cpup']['value']>0 %}
+                    ${{'%0.2f'|format(final_data['phase2']['metrics']['performance_metrics']['cpup']['value']|float)}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -1030,7 +1107,11 @@
                 <div class="executive_metric">
                   <h3>Creatives Tested</h3>
                   <h4>
+                    {% if final_data['phase2']['metrics']['creative_metrics']['tested_creatives']['value']>0 %}
                     {{final_data['phase2']['metrics']['creative_metrics']['tested_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -1069,7 +1150,11 @@
                 <div class="executive_metric">
                   <h3>Above Threshold</h3>
                   <h4>
+                    {% if final_data['phase2']['metrics']['creative_metrics']['above_threshold_creatives']['value']>0 %}
                     {{final_data['phase2']['metrics']['creative_metrics']['above_threshold_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -1108,7 +1193,11 @@
                 <div class="executive_metric">
                   <h3>Below Threshold</h3>
                   <h4>
+                    {% if final_data['phase2']['metrics']['creative_metrics']['below_threshold_creatives']['value']>0 %}
                     {{final_data['phase2']['metrics']['creative_metrics']['below_threshold_creatives']['value']}}
+                    {%else%}
+                    -
+                    {%endif%}
                   </h4>
                   <p>
                     {% if
@@ -1201,7 +1290,7 @@
         <img
           src="{{i}}"
           width="90%"
-          ;height="400px"
+          ;height="300px"
           style="padding-left: 100px"
         />
       </div>

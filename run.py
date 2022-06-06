@@ -48,8 +48,7 @@ def index():
     metrics_phase_2 = server_data[3]
     graph_data_phase_2 = server_data[4] 
     top_creative_phase_2= server_data[5]
-    
-    print(metrics_phase_1['creative_metrics']['win_rate_percent'])
+
 
     phase_1_data,label_1=process_data(graph_data_phase_1)
     chart_list_phase_1=[]
@@ -67,13 +66,13 @@ def index():
             'charts':chart_list_phase_1,
             'metrics':metrics_phase_1,
             'top_creative':top_creative_phase_1,
-            'win_rate_chart':win_rate_chart()
+            'win_rate_chart':win_rate_chart(metrics_phase_1['creative_metrics']['win_rate_percent'])
         },
         'phase2':{
             'charts':chart_list_phase_2,
             'metrics':metrics_phase_2,
             'top_creative':top_creative_phase_2,
-            'win_rate_chart':win_rate_chart()
+            'win_rate_chart':win_rate_chart(metrics_phase_2['creative_metrics']['win_rate_percent'])
         }
     }
     rendered = render_template('index.html',final_data=final_data)
@@ -166,14 +165,14 @@ def index_date(date):
     return final
 
 
-def win_rate_chart():
+def win_rate_chart(data):
     fig = go.Figure(go.Indicator(
         domain = {'x': [0, 1], 'y': [0, 1]},
-        value = 80,
+        value = (data['value']*100),
         mode = "gauge+number",
         gauge = {'axis': {'range': [None, 100]},
                 'bar': {'color': "#0099ff"},
-                'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 80}}))
+                'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value':data['value']*100}}))
         
 
     png =pio.to_image(fig)
